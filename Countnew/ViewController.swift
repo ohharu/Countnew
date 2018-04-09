@@ -11,7 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     var number:Int = 0
     @IBOutlet var label:UILabel!
+    var FontPoint: CGFloat = 30
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -34,10 +36,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func plus(){
+        
         number = number + 1
         label.text = String(number)
-        label.font = UIFont.systemFont(ofSize: 46)
+        label.font = UIFont.systemFont(ofSize: FontPoint + CGFloat(number))
         changecolor()
+        
     }
     @IBAction func minus(){
         number = number - 1
@@ -51,16 +55,19 @@ class ViewController: UIViewController {
         else{
             label.textColor = UIColor.black
         }
+        label.font = UIFont.systemFont(ofSize: FontPoint + CGFloat(number))
     }
     @IBAction func time(){
         number = number * number
         label.text = String(number)
         changecolor()
+        label.font = UIFont.systemFont(ofSize: FontPoint + CGFloat(number))
     }
     @IBAction func devide(){
         number = number / number
         label.text = String(number)
         changecolor()
+        label.font = UIFont.systemFont(ofSize: FontPoint + CGFloat(number))
     }
     @IBAction func clear(){
         number = 0
